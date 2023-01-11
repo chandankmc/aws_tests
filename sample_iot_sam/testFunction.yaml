@@ -1,0 +1,14 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: Lambda to write to Dynamodb based on a trigger from IoT service
+Resources:
+  testFunction:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: index.handler
+      Runtime: nodejs18.x
+      CodeUri: .
+      Description: Lambda to write to Dynamodb based on a trigger from IoT service
+      MemorySize: 128
+      Timeout: 3
+      Role: 'arn:aws:iam::056026206238:role/lambda_dynamodb_role'

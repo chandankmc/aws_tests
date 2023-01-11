@@ -1,0 +1,14 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: 'A lamdba function to read from Dynamo DB '
+Resources:
+  getDataFromDb:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: index.handler
+      Runtime: nodejs18.x
+      CodeUri: .
+      Description: 'A lamdba function to read from Dynamo DB '
+      MemorySize: 128
+      Timeout: 3
+      Role: 'arn:aws:iam::056026206238:role/lambda_dynamodb_role'
